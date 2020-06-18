@@ -17,13 +17,15 @@
         <nav>
             <ol>
                 <li>
-                    <a href="#">Portafolio</a>
+                    <!--Para el caso de link a otra pagina dentro de mi sitio: ./nom_carpeta/portafolio.html-->
+                    <!--Link interno-->
+                    <a href="#portafolio">Portafolio</a>
                 </li>
                 <li>
-                    <a href="#">Experiencia</a>
+                    <a href="#experiencia">Experiencia</a>
                 </li>
                 <li>
-                    <a href="#">Trabajemos juntos</a>
+                    <a href="#contacto">Trabajemos juntos</a>
                 </li>
             </ol>
         </nav>
@@ -35,7 +37,8 @@
         </h1>
         <img src="images/hero.jpg" width="500" height="300" alt="foto">
     </section>
-    <section>
+    <!--el uso de id permite realizar vinculos internos a una determinada seccion del sitio-->
+    <section id="portafolio">
         <h2>Portafolio (Mis proyectos)</h2>
         <!--una serie de proyectos realizados, cada uno va en un article-->
         <article>
@@ -50,7 +53,7 @@
             <img src="images/platzi-video-react-native.png" width="500" alt="Platzi-Video">
         </article>
     </section>
-    <section>
+    <section id="experiencia">
         <h2>Sobre mi experiencia</h2>
         <article>
             <!--contenedor de imagen-->
@@ -59,10 +62,17 @@
             </figure>
             <h3>PlatziConf Argentina 2021</h3>
             <p>El evento mas grande de Latinoamerica sobre tecnologia y software</p>
-            <a>Ver el evento</a>
+            <a href="https://www.youtube.com/watch?v=VFAlWecu-yw" target="_blank">Entrenamiento</a>
         </article>
     </section>
-    <section>seccion contactos</section>
+    <section id="contacto">
+        <form action="" method="post">
+            <h3>En contacto</h3>
+            <label for="id">Email:</label>
+            <input id="email" type="text" placeholder="Tu email aqui..." value="@gmail.com">
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
     <footer></footer>
 </body>
 </html>
