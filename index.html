@@ -6,19 +6,19 @@
     <title>Carlos Villanueva</title>
     <!--favicon-->
     <link rel="icon" type="image/png" href="images/favicon.png" >
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
+    <!--para aplicar style dentro de una etiqueta, colocamos el atributo style-->
+    <header class="header">
         <div>
-            <figure>
+            <figure class="logo">
                 <img src="images/logo.png" alt="logo" />
             </figure>
-        </div>
-        <nav>
-            <ol>
+            <nav class="menu">
                 <li>
-                    <!--Para el caso de link a otra pagina dentro de mi sitio: ./nom_carpeta/portafolio.html-->
-                    <!--Link interno-->
+                <!--Para el caso de link a otra pagina dentro de mi sitio: ./nom_carpeta/portafolio.html-->
+                <!--Link interno-->
                     <a href="#portafolio">Portafolio</a>
                 </li>
                 <li>
@@ -26,11 +26,11 @@
                 </li>
                 <li>
                     <a href="#contacto">Trabajemos juntos</a>
-                </li>
-            </ol>
-        </nav>
+                </li=>
+            </nav>
+        </div>
     </header>
-    <section>
+    <section class="hero">
         <h1>
             Hola soy <strong>Carlos Villanueva</strong>,
             <br> desarrollador <strong>fullstack</strong> con <br> pasion por el <strong>backend</strong>
@@ -38,41 +38,43 @@
         <img src="images/hero.jpg" width="500" height="300" alt="foto">
     </section>
     <!--el uso de id permite realizar vinculos internos a una determinada seccion del sitio-->
-    <section id="portafolio">
+    <section id="portafolio" class="portfolio">
         <h2>Portafolio (Mis proyectos)</h2>
         <!--una serie de proyectos realizados, cada uno va en un article-->
-        <article>
-            <h3>Watchin</h3>
-            <h6>React Native / React</h6>
-            <p><small><strong>Fecha:</strong> 01/07/2018</small></p>
-            <p><small><strong>Puedes verlo en:</strong> www.platzi.com/native</small></p>
-            <p>
+        <article class="project">
+            <h3 class="project-title">Watchin</h3>
+            <h6 class="project-course">React Native / React</h6>
+            <p class="project-date"><small><strong>Fecha:</strong> 01/07/2018</small></p>
+            <p class="project-url"><small><strong>Puedes verlo en:</strong> www.platzi.com/native</small></p>
+            <p class="project-description">
                 Watchin fue el resultado de 3 meses de trabajo
                 para crear la mejor app de reproduccion de videos.
             </p>
-            <img src="images/platzi-video-react-native.png" width="500" alt="Platzi-Video">
+            <figure class="project-imageContainer">
+                <img class="project-image" src="images/platzi-video-react-native.png" width="500" alt="Platzi-Video">
+            </figure>
         </article>
     </section>
     <section id="experiencia">
         <h2>Sobre mi experiencia</h2>
-        <article>
+        <article class="event">
             <!--contenedor de imagen-->
-            <figure>
-                <img src="images/platzi-conf.jpg" width="500" height="300" alt="PlatziConf" />
+            <figure class="event-imageContainer">
+                <img class="event-image" src="images/platzi-conf.jpg" width="500" height="300" alt="PlatziConf" />
             </figure>
-            <h3>PlatziConf Argentina 2021</h3>
-            <p>El evento mas grande de Latinoamerica sobre tecnologia y software</p>
-            <a href="https://www.youtube.com/watch?v=VFAlWecu-yw" target="_blank">Entrenamiento</a>
+            <h3 class="event-title">PlatziConf Argentina 2021</h3>
+            <p class="event-description">El evento mas grande de Latinoamerica sobre tecnologia y software</p>
+            <a class="event-url" href="https://www.youtube.com/watch?v=VFAlWecu-yw" target="_blank">Entrenamiento</a>
         </article>
     </section>
-    <section id="contacto">
-        <form action="" method="post">
+    <section id="contacto" class="contacto">
+        <form class="form-email" action="" method="post">
             <h3>En contacto</h3>
             <label for="id">Email:</label>
             <input id="email" type="text" placeholder="Tu email aqui..." value="@gmail.com">
             <input type="submit" value="Enviar">
         </form>
     </section>
-    <footer></footer>
+    <footer class="footer"></footer>
 </body>
 </html>
