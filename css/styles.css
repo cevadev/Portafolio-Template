@@ -10,3 +10,118 @@
 body header div nav ol li a
 {
 }*/
+
+/*Color background
+  gris oscuro: #1d252c
+  gris claro: #626262
+  background gris: #1b2127
+  celeste: #026fff*/
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+}
+/*Tipo de fuente para todas las h*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: 'Fjalla One', sans-serif;
+}
+
+h1{
+    /*alto de linea al tamano de la fuente 1.5 equivale al
+    100% + el 50%, lo que significa que podriamos colocar
+    line-height: 150%;*/
+    line-height: 1.5em;
+    font-size: 40px;
+    /*Peso de fuentes
+    font-weight: 100la fuente mas delgada/ 900 la mas gruesa
+    font-weight: 400 es la fuente normal
+    font-weight: 600 equivale a negrita;*/
+    font-weight: normal;
+    font-style: italic;
+    /*Espacio entre letras*/
+    letter-spacing: -.2px; /*un -20% del pixel*/
+    color: white;
+
+    /*Margenes*/
+    margin: 100px 150px 70px 30px;
+
+    /*Trasformacion de las fuentes*/
+    /*text-transform: uppercase*/;
+
+    /*decorado del texto*/
+    /*text-decoration: underline*/;
+}
+
+h1 strong{
+    color: #026fff;
+}
+
+.portfolio{
+    background: #fafafa;
+}
+
+.project{
+    /*tamano tipo estilo*/
+    /*
+    border-top: 10px solid red;
+    border-right: 10px solid red;
+    border-bottom: 10px solid red;
+    border-left: 10px solid red;
+    */
+    /*color a todos los broders*/
+    /*
+    border-color: blueviolet;
+    border-width: 5px;
+    border-style: solid;
+    */
+    /*
+    border-top-width: 15px;
+    border-top-style: solid;
+    */
+    border: 1px solid gray;
+    border-radius: 10px;
+    /*
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    */
+    margin: 10px;
+    margin-bottom: 15px;
+    /*margin-right: ;
+      margin-left: ;
+      margin-top: ;*/
+    padding: 20px;
+    background: white;
+}
+
+/*Aplicamos una dimension fija al elemento div*/
+.project-details{
+    width: 500px;
+}
+
+.project-imageContainer{
+    width: 500pc;
+}
+
+.hero{
+    height: 300px;
+    background-image: url('../images/hero.jpg');
+    background-size: 500px 300px;
+    background-color: #1b2127;
+    background-repeat: no-repeat;
+    background-position-x: right;
+}
+
+/*color de fondo al header*/
+.header{
+    background-color: #1b2127;
+}
+
+/*selector descenten: aplicar color blanco a los links dentro del header*/
+.header a{
+    color: white;
+    text-decoration: none;
+}
