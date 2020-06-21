@@ -48,6 +48,7 @@ h1{
 
     /*Margenes*/
     margin: 100px 150px 70px 30px;
+    margin: 0;
 
     /*Trasformacion de las fuentes*/
     /*text-transform: uppercase*/;
@@ -60,8 +61,18 @@ h1 strong{
     color: #026fff;
 }
 
+h2{
+    color: #026fff;
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
 .portfolio{
     background: #fafafa;
+    padding: 20px;
 }
 
 .project{
@@ -88,13 +99,42 @@ h1 strong{
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     */
-    margin: 10px;
+    /*margin: 10px;*/
     margin-bottom: 15px;
     /*margin-right: ;
       margin-left: ;
       margin-top: ;*/
     padding: 20px;
     background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.project-course{
+    margin: 10px 0;
+}
+
+.project-date{
+    margin: 10px 0;
+}
+
+.project-url{
+    margin: 10px;
+}
+
+.project-description{
+    font-size: 20px;
+}
+
+.project strong{
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.project-title{
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
 /*Aplicamos una dimension fija al elemento div*/
@@ -113,15 +153,85 @@ h1 strong{
     background-color: #1b2127;
     background-repeat: no-repeat;
     background-position-x: right;
+    display: flex;
+    align-items: center;
 }
 
 /*color de fondo al header*/
 .header{
     background-color: #1b2127;
+    /*display flex para que los hijos se alineen de forma horizontal*/
+    display: flex;
+    /*enviamos elemento hijo del header a un extremo contrario*/
+    justify-content: space-between;
+    height: 70px;
+    justify-content: space-between;
+}
+
+.menu{
+    /*menu hereda el heigh del header*/
+    height: inherit;
+}
+
+.header ol{
+    /*mostramos los elementos hijos de la lista de forma horizontal*/
+    display: flex;/*display: flex solo se aplica solo a los hijos directos*/
+    height: inherit; /*header ol hereda el height de .menu*/
+}
+
+.header ol li{
+    height: inherit; /*.header ol li hereda heightdel .header ol*/
 }
 
 /*selector descenten: aplicar color blanco a los links dentro del header*/
 .header a{
     color: white;
     text-decoration: none;
+    height: inherit;
+    /*centramos los elementos a ahora que han heredado un altura determinada*/
+    display: flex;
+    align-items: center;
+    padding: 10px; /*espacio entre los diferentes elementos*/
+}
+
+/*
+.flexbox{
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;/*que los elementos hijos no se encojan*/
+    /*flex-wrap permite indicar si los elementos hijos ocupan toda la pantalla apareciendo la barra de scrool
+    o si una vez ocupada el ancho se dibujan los hijos debajo
+    flex-wrap: wrap;
+}*/
+
+.box{
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+}
+
+ol, ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+figure{
+    margin: 0;
+}
+
+.footer{
+    color: white;
+    background-color: #1b2127;
+    display: flex;
+    /*align-items: center;*/
+    justify-content: space-between;
+}
+
+.footer img{
+    vertical-align: middle;
+}
+
+.footer a{
+    color: white;
 }
