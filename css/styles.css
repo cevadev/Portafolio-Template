@@ -73,7 +73,7 @@ h2{
 /*Header -> Container*/
 .container{
     /*border: 1px solid red;*/
-    width: 1000px;
+    max-width: 1000px; /*tamano variable del contenedor para permitir mejor agrupacion de los hijos responsivo*/
     margin: 0 auto;
     display: inherit;
     justify-content: inherit;
@@ -87,6 +87,7 @@ h2{
     padding: 20px;
 }
 
+/*Los projects se apilan uno debajo del otro*/
 .project{
     /*tamano tipo estilo*/
     /*
@@ -121,6 +122,8 @@ h2{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /*flex-wrap permite que se apile el contenido y debajo la imagen cuando se reduce el tamano*/
+    flex-wrap: wrap;
 }
 
 .project-course{
@@ -168,6 +171,8 @@ h2{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /*los hijos se apilan uno debajo del otro cuando no tiene espacio o se redimensiona el wiewport*/
+    flex-wrap: wrap;
 }
 
 .hero-image{
@@ -183,6 +188,8 @@ h2{
     justify-content: space-between;
     height: 70px;
     justify-content: space-between;
+    /* permite que los hijos se apilen uno debajo del otro cuando se reduce las dimensiones wiewport o no hay espacio*/
+    flex-wrap: wrap;
 }
 
 .menu{
@@ -243,6 +250,7 @@ figure{
     display: flex;
     /*align-items: center;*/
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .footer img{
@@ -307,6 +315,7 @@ figure{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .social{
@@ -364,9 +373,32 @@ figure{
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+/*Desktop First debe empezar por el Media querie mas grande*/
 /*2da forma cargar Media queries*/
-@media screen and (max-width: 768px){
+@media screen and(max-widht: 1024px)
+{
     body{
-        border: 10px solid red;
+
     }
 }
+
+@media screen and (max-width: 768px){
+    body{
+        
+    }
+}
+
+@media screen and(max-widht: 480px)
+{
+    body{
+        
+    }
+}
+
+@media screen and(max-widht: 320px)
+{
+    body{
+        
+    }
+}
+
