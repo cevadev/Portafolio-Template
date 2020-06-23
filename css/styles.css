@@ -73,7 +73,12 @@ h2{
 /*Header -> Container*/
 .container{
     /*border: 1px solid red;*/
-    max-width: 1000px; /*tamano variable del contenedor para permitir mejor agrupacion de los hijos responsivo*/
+    /*tamano variable del contenedor para permitir mejor agrupacion de los hijos responsivo con un ancho maximo de 1000px*/
+    max-width: 1000px;
+    /*ancho el 100% hasta 1000px*/
+    /*width: 100%;*/
+    /*Si queremos que un elemento con display:flex tenga el ancho maximo*/
+    flex: 1; /*le decimos toma todo al ancho disponible que tengas dentro del elemento.  width: 100% ya no es necesario*/
     margin: 0 auto;
     display: inherit;
     justify-content: inherit;
@@ -135,7 +140,7 @@ h2{
 }
 
 .project-url{
-    margin: 10px;
+    margin: 10px 0;
 }
 
 .project-description{
@@ -152,13 +157,19 @@ h2{
     margin-bottom: 10px;
 }
 
-/*Aplicamos una dimension fija al elemento div*/
+/*La imagen de los proyectos no deben tener tamano fijo. Sino que responda al tamano del contenedor*/
 .project-details{
-    width: 500px;
+    width: 50%;
 }
 
 .project-imageContainer{
-    width: 500px;
+    width: 50%;
+}
+
+/*Hacemos la img del proyecto responsive. La imagen tiene un width orginal de 500px, pero si el imageContainer
+  no tiene el tamano disponible la imagen se va a redimensionar*/
+.project-imageContainer img{
+    max-width: 100%;
 }
 
 .hero{
@@ -182,11 +193,12 @@ h2{
 /*color de fondo al header*/
 .header{
     background-color: #1b2127;
+    color: white;
     /*display flex para que los hijos se alineen de forma horizontal*/
     display: flex;
-    /*enviamos elemento hijo del header a un extremo contrario*/
-    justify-content: space-between;
     height: 70px;
+    align-items: center;
+    /*enviamos elemento hijo del header a un extremo contrario*/
     justify-content: space-between;
     /* permite que los hijos se apilen uno debajo del otro cuando se reduce las dimensiones wiewport o no hay espacio*/
     flex-wrap: wrap;
@@ -273,8 +285,8 @@ figure{
 
 .event{
     /*border: 1px solid red;*/
-    margin: 10px;
-    width: 480px;
+    margin: 1%;
+    width: 48%;
     flex-shrink: 0;
     border-radius: 10px;
     overflow: hidden;
@@ -382,16 +394,93 @@ figure{
     }
 }
 
-@media screen and (max-width: 768px){
-    body{
-        
+/*iPad = 768px a partir de 767px se aplica este media query*/
+@media screen and (max-width: 767px){
+    .header{
+        /*Cuando la resolucion sea menos a 768px el menu debe colocarse uno debajo del otro*/
+        display: block;
+        height: auto; /*reseteamos el height*/
+    }
+    /*colocamos los elementos del menu uno debajo del otro*/
+    .header ol{
+        display: initial; /*aplicamos valor por defecto de un ol*/
+    }
+
+    /*espaciado entre los menus*/
+    .header ol li{
+        height: 50px;
+    }
+
+    /*centrado al menu y display block*/
+    .header a{
+        justify-content: center;
+    }
+
+    .header .logo{
+        text-align: center;
+    }
+
+    /*Display: block para el texto del project y la imagen*/
+    .project{
+        display: block;
+    }
+
+    .project-imageContainer{
+        width: auto;
+        text-align: center;
+    }
+
+    .project-details{
+        width: auto;
+        font-size: 16px;
+    }
+
+    .project-course, .project-date, .project-url{
+        margin: .4em 0;
+    }
+
+    /*em vale 10px porque asi seteamos al elemento padre project-details*/
+    .project-title{
+        font-size: 1.5em;
+        margin-bottom: .3em;
+    }
+
+    .project-url{
+        font-size: 1em;
+    }
+
+    .project-course{
+        font-size: .7em;
+    }
+
+    .project-date{
+        font-size: 1em;
+    }
+
+    .project-description{
+        font-size: .8em;
+    }
+
+    .event{
+        width: auto;
+        flex-shrink: initial;
+    }
+
+    .event img{
+        width: 100%;
     }
 }
 
 @media screen and(max-widht: 480px)
 {
-    body{
-        
+    .project-details{
+        font-size: 12px;
+    }
+
+    .event-detail{
+        /* 1em = 16px*/
+        margin: .2em .5em .5em;
+        padding: 1em;
     }
 }
 
