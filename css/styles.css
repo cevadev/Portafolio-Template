@@ -496,10 +496,24 @@ figure{
         font-size: 2em;
         z-index: 2;
     }
+
+    .portfolio{
+        padding: 0;
+    }
+
+    .event-list-title{
+        margin-left: 0;
+    }
 }
 
 /*iPad = 768px a partir de 767px se aplica este media query*/
-@media screen and (max-width: 767px){
+@media screen and (max-width: 767px)
+{
+    h2{
+        font-size: 1.1em;
+        margin: .5em 0;
+    }
+
     .burger-button{
         display: block;
     }
@@ -589,7 +603,7 @@ figure{
     }
 
     .project-description{
-        font-size: .8em;
+        font-size: 1em;
     }
 
     .event{
@@ -610,7 +624,7 @@ figure{
     }
 
     .project-details{
-        font-size: 12px;
+        font-size: 14px; /*seteado para android*/
     }
 
     .event-detail{
@@ -639,6 +653,13 @@ figure{
         display: block;
         text-align: center;
         border: 1px solid transparent;
+    }
+    
+    .social-link
+    {
+        width: 40px;
+        height: 40px;
+        background-size: 100%;    
     }
 }
 

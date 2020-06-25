@@ -192,9 +192,7 @@
         /*adicionamos la clase .is-active del css*/
         const menu = document.querySelector('.menu');
         /*selector de id*/
-        const burgerButton = document.querySelector('#burger-menu');
-        
-
+        const burgerButton = document.querySelector('#burger-menu'); 
         /*Cuando se produzca el evento click al burgerButton le adicionamos la clase que contiene menu*/
         burgerButton.addEventListener('click', hideShow);
 
@@ -209,6 +207,25 @@
                 menu.classList.add('is-active');
             }
         }
+
+        /*Javascript with media queries*/
+        const ipda = window.matchMedia('screen and (max-width: 767px)');
+        ipda.addListener(validationMediaQuery);
+        function validationMediaQuery(event) 
+        {
+            if(event.matches)
+            {
+                    /*escucha el evento*/
+                burgerButton.addEventListener('click', hideShow);
+            }
+            else
+            {
+                    /*dejamos de escuchar el evento*/
+                burgerButton.removeEventListener('click', hideShow);
+            }
+        }
+        /*llamamos a la funcion cuando la pagina se cargue*/
+        validationMediaQuery(ipda);
     </script>
 </body>
 </html>
