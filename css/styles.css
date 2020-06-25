@@ -16,6 +16,37 @@ body header div nav ol li a
   gris claro: #626262
   background gris: #1b2127
   celeste: #026fff*/
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?bqb2fe');
+  src:  url('../fonts/icomoon.eot?bqb2fe#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?bqb2fe') format('truetype'),
+    url('../fonts/icomoon.woff?bqb2fe') format('woff'),
+    url('../fonts/icomoon.svg?bqb2fe#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-menu:before {
+  content: "\e900";
+}
+
 body{
     font-family: 'Source Sans Pro', sans-serif;
     margin: 0;
@@ -385,6 +416,55 @@ figure{
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+.html-video{
+    width: 100%;
+    height: auto;
+}
+
+/*incrustar un video con iframe - video resposive*/
+.youtube-video{
+    /*width: 100%;
+    height: auto;*/
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*video responsive*/
+.flexible-video{
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%; /*usamos la formula height * 100 / width*/
+    background: blue;
+    position: relative;
+}
+
+.burger-button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .8); /*80% de opacidad*/
+    color: white;
+    display: none;
+    line-height: 40px;
+    text-align: center;
+    position: fixed;
+    z-index: 4;
+    left: 5px;
+    top: 5px;
+
+    /*
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;*/
+
+}
+
 /*Desktop First debe empezar por el Media querie mas grande*/
 /*2da forma cargar Media queries*/
 @media screen and (max-width: 1023px)
@@ -420,6 +500,10 @@ figure{
 
 /*iPad = 768px a partir de 767px se aplica este media query*/
 @media screen and (max-width: 767px){
+    .burger-button{
+        display: block;
+    }
+
     .header{
         /*Cuando la resolucion sea menos a 768px el menu debe colocarse uno debajo del otro*/
         display: block;
@@ -437,11 +521,34 @@ figure{
 
     /*centrado al menu y display block*/
     .header a{
+        height: 40px;
+        font-size: 2em;
+        text-decoration: underline;
+        margin-bottom: .5em;
         justify-content: center;
     }
 
     .header .logo{
         text-align: center;
+    }
+
+    .menu{
+        position: fixed;
+        background: rgba(5, 111, 255, .9);
+        z-index: 3;
+        top: 0;
+        width: 100vw; /*toma el ancho del viewport*/
+        /*height: 100vh;*/
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        left: -100vw; /*escondemos el menu*/
+        transition: 1s;
+    }
+
+    .menu.is-active{
+        left: 0;
     }
 
     /*Display: block para el texto del project y la imagen*/
